@@ -1,0 +1,632 @@
+/* ==================== RESET E VARIABILI ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #0a1628;
+    --primary-blue: #1e3a5f;
+    --accent-gold: #d4af37;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --gray-light: #f5f7fa;
+    --gray-medium: #e0e0e0;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ==================== TIPOGRAFIA E ELEMENTI BASE ==================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* ==================== NAVBAR ==================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-gold);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ==================== HERO SECTION ==================== */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+    z-index: -1;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -50px;
+    right: -100px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--text-light);
+    z-index: 1;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-class {
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.hero-quote {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.btn-pdf {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+.btn-pdf i {
+    margin-right: 0.8rem;
+}
+
+.btn-pdf:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* ==================== SEZIONI GENERALI ==================== */
+
+.section {
+    padding: 80px 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.8s ease;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-gold);
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* ==================== SEZIONE CHI SONO ==================== */
+
+.chi-sono {
+    background-color: var(--gray-light);
+}
+
+.section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.text-content {
+    animation: fadeInLeft 0.8s ease 0.2s both;
+}
+
+.text-content .section-title {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.text-content .section-title::after {
+    left: 0;
+}
+
+.section-text {
+    text-align: left;
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.image-content {
+    animation: fadeInRight 0.8s ease 0.2s both;
+}
+
+.profile-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+/* ==================== SEZIONE SPORT ==================== */
+
+.sport {
+    background-color: var(--text-light);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background-color: var(--gray-light);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    animation: slideInUp 0.8s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+.achievement-box {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+    border-radius: 15px;
+    color: var(--text-light);
+    animation: fadeIn 1s ease;
+}
+
+.big-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    animation: countUp 2s ease;
+}
+
+.achievement-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+/* ==================== SEZIONE PCTO ==================== */
+
+.pcto {
+    background-color: var(--gray-light);
+    text-align: center;
+}
+
+.pcto .section-title {
+    margin-top: 1rem;
+}
+
+/* ==================== SEZIONE EDUCAZIONE CIVICA ==================== */
+
+.civica {
+    background-color: var(--text-light);
+    text-align: center;
+}
+
+.civica .section-title {
+    margin-top: 1rem;
+}
+
+/* ==================== CONCLUSIONE ==================== */
+
+.conclusione {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.conclusione .section-title {
+    color: var(--text-light);
+}
+
+.conclusione .section-title::after {
+    background-color: var(--accent-gold);
+}
+
+.conclusione .section-text {
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+}
+
+.final-quote {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--accent-gold);
+    line-height: 1.8;
+}
+
+/* ==================== FOOTER ==================== */
+
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+/* ==================== ANIMAZIONI ==================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==================== SCROLL REVEAL ==================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-quote {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 60px 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .text-content .section-title {
+        text-align: center;
+    }
+
+    .text-content .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text-content .section-text {
+        text-align: center;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .big-number {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-class {
+        font-size: 1rem;
+    }
+
+    .hero-quote {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 50px 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-text {
+        font-size: 0.95rem;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .big-number {
+        font-size: 2.5rem;
+    }
+
+    .final-quote {
+        font-size: 1.1rem;
+    }
+}
