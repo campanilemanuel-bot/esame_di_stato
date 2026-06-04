@@ -1,126 +1,84 @@
-// ==================== SCROLL REVEAL ==================== //
+// ==================== SMOOTH SCROLL HANDLING ==================== //
 
-// Funzione per rivelare gli elementi durante lo scroll
-function revealOnScroll() {
-    const reveals = document.querySelectorAll('.section');
-    
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
+// Scorrimento fluido per link ancora
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
-    });
-}
-
-// Aggiungere la classe 'reveal' a tutte le card e sezioni per animarle
-window.addEventListener('scroll', revealOnScroll);
-
-// Eseguire la funzione al caricamento
-revealOnScroll();
-
-// ==================== NAVBAR ACTIVE LINK ==================== //
-
-// Funzione per evidenziare il link della navbar attivo
-function setActiveNavLink() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        const sections = [
-            { id: 'presentazione', offset: 150 },
-            { id: 'pcto', offset: 150 },
-            { id: 'civica', offset: 150 }
-        ];
-        
-        sections.forEach(section => {
-            const sectionElement = document.getElementById(section.id);
-            if (sectionElement) {
-                const sectionTop = sectionElement.offsetTop;
-                if (pageYOffset >= sectionTop - section.offset) {
-                    current = section.id;
-                }
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-}
-
-setActiveNavLink();
-
-// ==================== SMOOTH SCROLL ENHANCEMENT ==================== //
-
-// Aggiungere un piccolo delay al click sui link per un'esperienza migliore
-const navLinks = document.querySelectorAll('.nav-link, .btn');
-
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        // Il comportamento di scroll smooth è già gestito da CSS
-        // Questo è solo per miglioramenti futuri se necessari
     });
 });
 
-// ==================== ANIMAZIONE CARDS AL CARICAMENTO ==================== //
+// ==================== SCROLL REVEAL ANIMATION ==================== //
 
-// Funzione per animare le card quando si scrollano in vista
-function animateCards() {
-    const cards = document.querySelectorAll('.card');
+// Osservare gli elementi per rivelare animazioni
+const revealElements = () => {
+    const elements = document.querySelectorAll(
+        '.presentation-text, .gallery-item, .document-card'
+    );
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
-    
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease';
-        observer.observe(card);
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-}
+    
+    elements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        observer.observe(element);
+    });
+};
 
+// Eseguire quando il DOM è pronto
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', animateCards);
+    document.addEventListener('DOMContentLoaded', revealElements);
 } else {
-    animateCards();
+    revealElements();
 }
 
-// ==================== ANIMAZIONE HERO ==================== //
+// ==================== PARALLAX EFFECT ==================== //
 
-// Animare il testo hero al caricamento della pagina
-window.addEventListener('load', () => {
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.opacity = '1';
-        heroContent.style.animation = 'fadeInUp 0.8s ease';
+// Effetto parallax leggero sulla hero
+window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero');
+    const heroBg = document.querySelector('.hero-bg');
+    
+    if (heroBg && window.pageYOffset < hero.offsetHeight) {
+        const scrollPosition = window.pageYOffset;
+        heroBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
     }
 });
 
-// ==================== EFFETTO PARALLAX LEGGERO ==================== //
+// ==================== PDF VIEWER FALLBACK ==================== //
 
-// Aggiungere un leggero effetto parallax al hero
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
+// Gestire il caricamento del PDF
+window.addEventListener('load', () => {
+    const iframes = document.querySelectorAll('.pdf-viewer iframe');
     
-    if (scrolled < hero.offsetHeight) {
-        hero.style.backgroundPosition = `0px ${scrolled * 0.5}px`;
-    }
+    iframes.forEach(iframe => {
+        // Verificare se il PDF è stato caricato
+        iframe.addEventListener('error', () => {
+            console.error('Errore nel caricamento del PDF');
+            iframe.parentElement.innerHTML = '<p style="text-align: center; padding: 2rem; color: #666;">Il PDF non è disponibile. <a href="' + iframe.src + '" target="_blank">Scarica il file</a></p>';
+        });
+    });
 });
 
 // ==================== CONSOLE LOG ==================== //
 
-console.log('✨ Il mio Capolavoro - Sito caricato correttamente');
-console.log('📚 Sezioni: Presentazione, PCTO, Educazione Civica');
+console.log('✨ Portfolio Manuel Campanile caricato correttamente');
+console.log('📚 Sezioni: Home, Presentazione, Documenti');
