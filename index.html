@@ -8,89 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- NAVBAR FISSA -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">MC</div>
-            <div class="nav-spacer"></div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
+    <!-- HERO SECTION A TUTTA LARGHEZZA -->
+    <section class="hero" style="background-image: url('background-home.jpg');">
+        <!-- OVERLAY SCURO -->
+        <div class="hero-overlay"></div>
+        
+        <!-- CONTENUTO CENTRATO -->
         <div class="hero-content">
             <h1 class="hero-title">MANUEL CAMPANILE</h1>
             <p class="hero-class">Classe 5CSA</p>
             <p class="hero-quote">"Ogni esperienza lascia un segno: il mio percorso racconta chi sono oggi e chi voglio diventare domani."</p>
-            <a href="#presentazione" class="btn btn-primary">Scopri il mio percorso</a>
-        </div>
-        <div class="hero-bg"></div>
-    </section>
-
-    <!-- SEZIONE PRESENTAZIONE PERSONALE -->
-    <section id="presentazione" class="section presentazione">
-        <div class="container">
-            <h2 class="section-title">La mia presentazione</h2>
             
-            <div class="presentation-content">
-                <p class="presentation-text">
-                    Durante questi cinque anni di scuola superiore ho vissuto un percorso di crescita personale e scolastica. La scuola mi ha permesso non solo di acquisire conoscenze, ma anche di sviluppare maggiore autonomia, responsabilità e consapevolezza.
-                </p>
-
-                <p class="presentation-text">
-                    Accanto al percorso scolastico, lo sport ha avuto un ruolo importante nella mia crescita. La palestra mi ha insegnato il valore della costanza, dell'impegno quotidiano e della disciplina. Anche la corsa è stata per me una sfida significativa: riuscire a correre 21 chilometri mi ha fatto capire quanto la determinazione sia fondamentale per superare i propri limiti.
-                </p>
-
-                <p class="presentation-text">
-                    Un'altra esperienza importante è stata il volontariato con il Banco Alimentare. Questa attività mi ha permesso di comprendere il valore della solidarietà, dell'aiuto concreto e della collaborazione. Mi ha fatto capire che anche piccoli gesti possono contribuire al benessere degli altri.
-                </p>
-
-                <p class="presentation-text">
-                    Questo percorso mi ha aiutato a conoscermi meglio, a diventare più responsabile e a guardare al futuro con maggiore consapevolezza.
-                </p>
-            </div>
-
-            <!-- GALERIA DI IMMAGINI -->
-            <div class="images-gallery">
-                <div class="gallery-item">
-                    <img src="foto-personale.jpg" alt="Foto personale">
-                </div>
-                <div class="gallery-item">
-                    <img src="palestra.jpg" alt="Palestra">
-                </div>
-                <div class="gallery-item">
-                    <img src="21km.jpg" alt="21 km">
-                </div>
-                <div class="gallery-item">
-                    <img src="banco-alimentare.jpg" alt="Banco Alimentare">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEZIONE DOCUMENTI -->
-    <section id="documenti" class="section documenti">
-        <div class="container">
-            <h2 class="section-title">Documenti del percorso</h2>
-            
-            <div class="documents-grid">
-                <!-- CARD PCTO -->
-                <a href="pcto.html" class="document-card">
-                    <div class="document-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3 class="document-title">PCTO</h3>
-                    <p class="document-button">Apri documento</p>
-                </a>
-
-                <!-- CARD EDUCAZIONE CIVICA -->
-                <a href="educazione-civica.html" class="document-card">
-                    <div class="document-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3 class="document-title">Educazione Civica</h3>
-                    <p class="document-button">Apri documento</p>
-                </a>
+            <!-- PULSANTI DI ACCESSO -->
+            <div class="hero-buttons">
+                <a href="presentazione.html" class="btn btn-hero">Presentazione personale</a>
+                <a href="pcto.html" class="btn btn-hero">PCTO</a>
+                <a href="educazione-civica.html" class="btn btn-hero">Educazione Civica</a>
             </div>
         </div>
     </section>

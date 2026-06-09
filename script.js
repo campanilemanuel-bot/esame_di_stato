@@ -19,7 +19,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Osservare gli elementi per rivelare animazioni
 const revealElements = () => {
     const elements = document.querySelectorAll(
-        '.presentation-text, .gallery-item, .document-card'
+        '.presentation-text, .presentation-card'
     );
     
     const observer = new IntersectionObserver((entries) => {
@@ -50,35 +50,7 @@ if (document.readyState === 'loading') {
     revealElements();
 }
 
-// ==================== PARALLAX EFFECT ==================== //
-
-// Effetto parallax leggero sulla hero
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const heroBg = document.querySelector('.hero-bg');
-    
-    if (heroBg && window.pageYOffset < hero.offsetHeight) {
-        const scrollPosition = window.pageYOffset;
-        heroBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    }
-});
-
-// ==================== PDF VIEWER FALLBACK ==================== //
-
-// Gestire il caricamento del PDF
-window.addEventListener('load', () => {
-    const iframes = document.querySelectorAll('.pdf-viewer iframe');
-    
-    iframes.forEach(iframe => {
-        // Verificare se il PDF è stato caricato
-        iframe.addEventListener('error', () => {
-            console.error('Errore nel caricamento del PDF');
-            iframe.parentElement.innerHTML = '<p style="text-align: center; padding: 2rem; color: #666;">Il PDF non è disponibile. <a href="' + iframe.src + '" target="_blank">Scarica il file</a></p>';
-        });
-    });
-});
-
 // ==================== CONSOLE LOG ==================== //
 
 console.log('✨ Portfolio Manuel Campanile caricato correttamente');
-console.log('📚 Sezioni: Home, Presentazione, Documenti');
+console.log('📚 Sezioni: Home, Presentazione, PCTO, Educazione Civica');
