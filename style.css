@@ -171,11 +171,12 @@ body {
 .btn-pdf {
     background-color: var(--accent-gold);
     color: var(--primary-dark);
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
     padding: 1rem 2rem;
+    margin-right: 1rem;
 }
 
 .btn-pdf:hover {
@@ -223,6 +224,14 @@ body {
     background-color: var(--accent-gold);
 }
 
+.pdf-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
 /* ==================== PRESENTAZIONE ==================== */
 
 .presentation-text-container {
@@ -265,6 +274,7 @@ body {
     height: 200px;
     object-fit: cover;
     transition: var(--transition);
+    border-radius: 15px 15px 0 0;
 }
 
 .presentation-card:hover img {
@@ -303,6 +313,11 @@ body {
     width: 100%;
     height: 700px;
     border: none;
+}
+
+.pdf-buttons {
+    text-align: center;
+    margin-top: 2rem;
 }
 
 /* ==================== FOOTER ==================== */
@@ -392,6 +407,12 @@ body {
     .pdf-viewer iframe {
         height: 500px;
     }
+
+    .btn-pdf {
+        margin-right: 0.5rem;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -467,9 +488,15 @@ body {
         height: 400px;
     }
 
+    .pdf-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
     .btn-pdf {
         width: 100%;
-        max-width: 100%;
-        margin-top: 1.5rem;
+        margin-right: 0;
+        margin-top: 0.8rem;
     }
 }
