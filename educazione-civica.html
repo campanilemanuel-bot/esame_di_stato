@@ -1,62 +1,95 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Educazione Civica | Manuel Campanile</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educazione civica - Manuel Campanile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+<body class="subpage-body">
 
-<body class="doc-page">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
 
-  <a href="index.html" class="back">← Torna alla Home</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Torna alla home
+      </a>
 
-  <section class="doc-hero">
-    <span>03</span>
-    <h1>Educazione Civica</h1>
-    <p>
-      Un percorso di riflessione sul rapporto tra sviluppo economico,
-      sostenibilità e responsabilità verso il futuro.
-    </p>
-  </section>
-
-  <section class="doc-card">
-
-    <div class="doc-text">
-      <h2>Crescere senza compromettere il futuro</h2>
-
-      <p>
-        L’elaborato approfondisce il legame tra crescita economica,
-        tutela dell’ambiente e responsabilità delle nuove generazioni,
-        mettendo in evidenza l’importanza di uno sviluppo sostenibile
-        capace di rispondere ai bisogni del presente senza compromettere il domani.
-      </p>
-
-      <div class="doc-buttons">
-        <a href="educazione-civica-2026.pdf" target="_blank">Apri PDF</a>
-        <a href="educazione-civica-2026.pdf" download="educazione-civica-2026.pdf">Scarica PDF</a>
+      <div class="brand brand-small">
+        <div class="brand-badge">MC</div>
+        <div class="brand-text">
+          <span class="brand-name">Educazione civica</span>
+          <span class="brand-class">Manuel Campanile</span>
+        </div>
       </div>
     </div>
+  </header>
 
-    <div class="pdf-cover">
-      <img src="educazione-civica-cover.png" alt="Copertina Educazione Civica">
-    </div>
+  <main class="document-page">
+    <section class="document-hero container reveal">
+      <div class="doc-hero-left">
+        <p class="eyebrow">Sezione 03</p>
+        <h1>Educazione civica</h1>
+        <p class="doc-subtitle">
+          Un approfondimento su sviluppo economico, sostenibilità, cittadinanza attiva e responsabilità verso il futuro.
+        </p>
 
-  </section>
-
-  <section class="pdf-preview-section">
-    <div class="pdf-preview-box">
-      <div class="pdf-preview-top">
-        <h3>Anteprima del documento</h3>
-        <p>Visualizzazione diretta del PDF di Educazione Civica</p>
+        <div class="doc-tags">
+          <span>Sostenibilità</span>
+          <span>Sviluppo economico</span>
+          <span>Cittadinanza</span>
+          <span>Responsabilità</span>
+        </div>
       </div>
 
-      <iframe
-        class="pdf-frame"
-        src="educazione-civica-2026.pdf">
-      </iframe>
-    </div>
-  </section>
+      <div class="doc-hero-right">
+        <div class="mini-cover-card">
+          <img src="educazione-civica-cover.png" alt="Copertina educazione civica">
+        </div>
+      </div>
+    </section>
 
+    <section class="document-view-section container reveal delay-1">
+      <div class="document-toolbar">
+        <div>
+          <h2>Documento PDF</h2>
+          <p>Visualizzazione integrata del file di educazione civica</p>
+        </div>
+
+        <div class="document-actions">
+          <a href="educazione-civica-2026.pdf" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-up-right-from-square"></i> Apri PDF
+          </a>
+          <a href="educazione-civica-2026.pdf" download class="btn btn-secondary">
+            <i class="fa-solid fa-download"></i> Scarica
+          </a>
+        </div>
+      </div>
+
+      <div class="pdf-shell">
+        <iframe
+          src="educazione-civica-2026.pdf#view=FitH"
+          title="Educazione civica PDF">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <h4>Manuel Campanile</h4>
+        <p>Educazione civica</p>
+      </div>
+      <p class="footer-copy">© 2026 - Capolavoro di maturità</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

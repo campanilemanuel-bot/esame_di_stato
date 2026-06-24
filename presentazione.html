@@ -1,99 +1,96 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La mia presentazione - Manuel Campanile</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentazione personale - Manuel Campanile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-home-btn">
-                <i class="fas fa-arrow-left"></i>
-                Torna alla Home
-            </a>
-            <div class="nav-spacer"></div>
+<body class="subpage-body">
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Torna alla home
+      </a>
+
+      <div class="brand brand-small">
+        <div class="brand-badge">MC</div>
+        <div class="brand-text">
+          <span class="brand-name">Presentazione personale</span>
+          <span class="brand-class">Manuel Campanile</span>
         </div>
-    </nav>
+      </div>
+    </div>
+  </header>
 
-    <!-- SEZIONE PRESENTAZIONE -->
-    <section class="content-section">
-        <div class="container">
-            <h1 class="page-title">La mia presentazione</h1>
-            
-            <!-- VISUALIZZATORE PDF -->
-            <div class="pdf-viewer">
-                <iframe src="Presentazione_personale_Manuel_Campanile (3).pdf" type="application/pdf"></iframe>
-            </div>
+  <main class="document-page">
+    <section class="document-hero container reveal">
+      <div class="doc-hero-left">
+        <p class="eyebrow">Sezione 01</p>
+        <h1>Presentazione personale</h1>
+        <p class="doc-subtitle">
+          Un racconto sintetico del mio percorso: passioni, sport, crescita, volontariato e identità personale.
+        </p>
 
-            <!-- PULSANTI -->
-            <div class="pdf-buttons">
-                <a href="Presentazione_personale_Manuel_Campanile (3).pdf" target="_blank" class="btn btn-pdf">
-                    <i class="fas fa-external-link-alt"></i>
-                    Apri PDF in nuova scheda
-                </a>
-                <a href="Presentazione_personale_Manuel_Campanile (3).pdf" download="Presentazione_personale_Manuel_Campanile.pdf" class="btn btn-pdf">
-                    <i class="fas fa-download"></i>
-                    Scarica PDF
-                </a>
-            </div>
-
-            <!-- TESTO PRINCIPALE -->
-            <div class="presentation-text-container">
-                <p class="presentation-text">
-                    Durante questi cinque anni di scuola superiore ho vissuto un percorso di crescita personale e scolastica. La scuola mi ha permesso non solo di acquisire conoscenze, ma anche di[...]
-                </p>
-
-                <p class="presentation-text">
-                    Accanto al percorso scolastico, lo sport ha avuto un ruolo importante nella mia crescita. La palestra mi ha insegnato il valore della costanza, dell'impegno quotidiano e della [...]
-                </p>
-
-                <p class="presentation-text">
-                    Un'altra esperienza importante è stata il volontariato con il Banco Alimentare. Questa attività mi ha permesso di comprendere il valore della solidarietà, dell'aiuto concret[...]
-                </p>
-
-                <p class="presentation-text">
-                    Questo percorso mi ha aiutato a conoscermi meglio, a diventare più responsabile e a guardare al futuro con maggiore consapevolezza.
-                </p>
-            </div>
-
-            <!-- CARD SEZIONI -->
-            <div class="presentation-cards">
-                <div class="presentation-card">
-                    <img src="assets/images/palestra.jpg" alt="Sport e disciplina">
-                    <div class="card-content">
-                        <h3>Sport e disciplina</h3>
-                        <p>La palestra mi ha insegnato il valore della costanza e dell'impegno quotidiano.</p>
-                    </div>
-                </div>
-
-                <div class="presentation-card">
-                    <img src="assets/images/21km.jpg" alt="Corsa 21 km">
-                    <div class="card-content">
-                        <h3>Corsa: 21 KM</h3>
-                        <p>Una sfida che mi ha insegnato a superare i miei limiti con determinazione.</p>
-                    </div>
-                </div>
-
-                <div class="presentation-card">
-                    <img src="assets/images/banco-alimentare.jpg" alt="Volontariato">
-                    <div class="card-content">
-                        <h3>Volontariato: Banco Alimentare</h3>
-                        <p>Un'esperienza che mi ha mostrato il valore della solidarietà e della collaborazione.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="doc-tags">
+          <span>Sport</span>
+          <span>21 km</span>
+          <span>Palestra</span>
+          <span>Volontariato</span>
+          <span>Crescita personale</span>
         </div>
+      </div>
+
+      <div class="doc-hero-right">
+        <div class="mini-cover-card">
+          <img src="presentazione-cover.png" alt="Copertina presentazione personale">
+        </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 Manuel Campanile | Capolavoro di Maturità</p>
-    </footer>
+    <section class="document-view-section container reveal delay-1">
+      <div class="document-toolbar">
+        <div>
+          <h2>Documento PDF</h2>
+          <p>Visualizzazione integrata della presentazione personale</p>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="document-actions">
+          <a href="Presentazione_personale_Manuel_Campanile (3).pdf" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-up-right-from-square"></i> Apri PDF
+          </a>
+          <a href="Presentazione_personale_Manuel_Campanile (3).pdf" download class="btn btn-secondary">
+            <i class="fa-solid fa-download"></i> Scarica
+          </a>
+        </div>
+      </div>
+
+      <div class="pdf-shell">
+        <iframe
+          src="Presentazione_personale_Manuel_Campanile (3).pdf#view=FitH"
+          title="Presentazione personale PDF">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <h4>Manuel Campanile</h4>
+        <p>Presentazione personale</p>
+      </div>
+      <p class="footer-copy">© 2026 - Capolavoro di maturità</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

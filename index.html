@@ -1,38 +1,147 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuel Campanile - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manuel Campanile - Capolavoro di Maturità</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <!-- HERO SECTION A TUTTA LARGHEZZA -->
-    <section class="hero" style="background-image: url('assets/images/background-home.jpg');">
-        <!-- OVERLAY SCURO -->
-        <div class="hero-overlay"></div>
-        
-        <!-- CONTENUTO CENTRATO -->
-        <div class="hero-content">
-            <h1 class="hero-title">MANUEL CAMPANILE</h1>
-            <p class="hero-class">Classe 5CSA</p>
-            <p class="hero-quote">"Ogni esperienza lascia un segno: il mio percorso racconta chi sono oggi e chi voglio diventare domani."</p>
-            
-            <!-- PULSANTI DI ACCESSO -->
-            <div class="hero-buttons">
-                <a href="presentazione.html" class="btn btn-hero">Presentazione personale</a>
-                <a href="pcto.html" class="btn btn-hero">PCTO</a>
-                <a href="educazione-civica.html" class="btn btn-hero">Educazione Civica</a>
-            </div>
+
+  <!-- BACKGROUND DECOR -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="brand-badge">MC</div>
+        <div class="brand-text">
+          <span class="brand-name">Manuel Campanile</span>
+          <span class="brand-class">Classe 5CSA</span>
         </div>
-    </section>
+      </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 Manuel Campanile | Capolavoro di Maturità</p>
-    </footer>
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#sezioni">Sezioni</a>
+      </nav>
+    </div>
+  </header>
 
-    <script src="script.js"></script>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-left reveal">
+        <p class="eyebrow">Capolavoro personale</p>
+        <h1>Manuel Campanile</h1>
+        <p class="hero-class">Classe 5CSA</p>
+
+        <blockquote class="hero-quote">
+          “Ogni esperienza lascia un segno: il mio percorso racconta chi sono oggi e chi voglio diventare domani.”
+        </blockquote>
+
+        <p class="hero-text">
+          Un percorso che unisce crescita personale, scuola, sport, esperienze formative e obiettivi futuri.
+          Questo sito raccoglie in modo chiaro e ordinato le tre sezioni principali del mio capolavoro.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#sezioni" class="btn btn-primary">Esplora il sito</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal delay-1">
+        <div class="hero-visual-card">
+          <img src="quote-image.png" alt="Percorso personale e crescita" class="hero-image">
+          <div class="hero-visual-overlay">
+            <span>Percorso, crescita, futuro</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONI -->
+  <section class="sections" id="sezioni">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Le tre sezioni del sito</p>
+        <h2>Esplora il mio percorso</h2>
+        <p>
+          Ogni area approfondisce un aspetto diverso del mio cammino scolastico e personale:
+          presentazione, FSL (ex PCTO) ed educazione civica.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- PRESENTAZIONE -->
+        <a href="presentazione.html" class="big-card reveal">
+          <div class="card-cover">
+            <img src="presentazione-cover.png" alt="Copertina presentazione personale">
+            <div class="card-cover-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon"><i class="fa-regular fa-user"></i></div>
+            <h3>Presentazione personale</h3>
+            <p>
+              Scelte, passioni, sport, crescita personale e il percorso che mi ha portato a diventare la persona che sono oggi.
+            </p>
+            <span class="card-link">Apri sezione <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- FSL / ex PCTO -->
+        <a href="pcto.html" class="big-card reveal delay-1">
+          <div class="card-cover">
+            <img src="pcto-cover.png" alt="Copertina FSL ex PCTO">
+            <div class="card-cover-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+            <h3>FSL (ex PCTO)</h3>
+            <p>
+              Esperienze formative tra tecnologia, ricerca, laboratorio, orientamento e competenze maturate nel triennio.
+            </p>
+            <span class="card-link">Apri sezione <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- EDUCAZIONE CIVICA -->
+        <a href="educazione-civica.html" class="big-card reveal delay-2">
+          <div class="card-cover">
+            <img src="educazione-civica-cover.png" alt="Copertina educazione civica">
+            <div class="card-cover-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Educazione civica</h3>
+            <p>
+              Un percorso dedicato a sviluppo economico, sostenibilità, responsabilità e consapevolezza verso il futuro.
+            </p>
+            <span class="card-link">Apri sezione <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <h4>Manuel Campanile</h4>
+        <p>Classe 5CSA · Capolavoro di maturità</p>
+      </div>
+      <p class="footer-copy">© 2026 - Sito personale per l’esame di Stato</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
